@@ -31,6 +31,7 @@ client.on("ready", async () => {
 process.on("unhandledRejection", console.error);
 
 client.on("message", async message => {
+  if (message.author.id !== '365358676325695491') return message.delete().catch(O_o=>{});  
 
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
