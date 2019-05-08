@@ -3,7 +3,7 @@ const fs = require("fs");
 let warnings = JSON.parse(fs.readFileSync("./warnlist.json", "utf8"));
 
 module.exports.run = async (client, message, args) => {
-
+    if (message.author.id !== '320255429080776707') return message.reply("Nice try.");
   let wuser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
   if(!wuser) return message.reply("Specify a user to warn.");
   let reason = args.join(" ").slice(22);
