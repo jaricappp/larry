@@ -1,8 +1,7 @@
 const Discord = require("discord.js");
 exports.run = (client, message, args) => {
 
-    if(!message.member.roles.some(r=>["HIGH COMMAND", "FOUNDER"].includes(r.name)) )
-      return message.reply("Nice try.");
+    if (message.author.id !== '320255429080776707') return message.reply("Nice try.");
     
     let dauthor = message.author;
     let dmember = message.mentions.members.first();
